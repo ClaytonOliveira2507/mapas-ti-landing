@@ -182,43 +182,23 @@ nav {
   background: #000;
   aspect-ratio: 9/16;
   position: relative;
-  cursor: pointer;
   box-shadow: 0 24px 64px rgba(0,0,0,0.5);
 }
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.video-container iframe {
+  position: absolute;
+  top: -8%;
+  left: -5%;
+  width: 110%;
+  height: 116%;
+  border: none;
   display: block;
+  pointer-events: none;
 }
-.video-overlay {
+.video-mask {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  background: rgba(0,0,0,0.35);
-  transition: opacity .25s;
-}
-.video-overlay.hidden { opacity: 0; pointer-events: none; }
-.play-circle {
-  width: 60px; height: 60px;
-  border: 1.5px solid rgba(255,255,255,0.55);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(4px);
-  transition: background .2s;
-}
-.video-container:hover .play-circle { background: rgba(0,0,0,0.6); }
-.play-triangle {
-  width: 0; height: 0;
-  border-left: 20px solid rgba(255,255,255,0.9);
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  margin-left: 4px;
+  z-index: 2;
+  cursor: pointer;
 }
 .video-label { font-size: 13px; color: rgba(255,255,255,0.7); }
 
@@ -730,7 +710,8 @@ footer {
     </div>
 
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/u-o_e0Fvt4o" title="Veja como os mapas funcionam na prática" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;display:block;"></iframe>
+      <iframe src="https://www.youtube.com/embed/u-o_e0Fvt4o?autoplay=1&mute=1&loop=1&playlist=u-o_e0Fvt4o&controls=0&modestbranding=1&rel=0&playsinline=1" title="Veja como os mapas funcionam na prática" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      <div class="video-mask"></div>
     </div>
 
     <div class="stats-row">
