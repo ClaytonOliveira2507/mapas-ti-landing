@@ -729,25 +729,9 @@ footer {
       <span class="hero-note">Pagamento único · Acesso imediato · Garantia de 7 dias</span>
     </div>
 
-    <div class="video-container" id="vc">
-      <video id="vid" src="ugc.mp4" playsinline preload="metadata"></video>
-      <div class="video-overlay" id="vov">
-        <div class="play-circle">
-          <div class="play-triangle"></div>
-        </div>
-        <span class="video-label">Veja como os mapas funcionam na prática</span>
-      </div>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/u-o_e0Fvt4o" title="Veja como os mapas funcionam na prática" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;display:block;"></iframe>
     </div>
-    <script>
-      (function(){
-        var vc=document.getElementById('vc'),vid=document.getElementById('vid'),vov=document.getElementById('vov');
-        vc.addEventListener('click',function(){
-          if(vid.paused){vid.play();vov.classList.add('hidden');}
-          else{vid.pause();vov.classList.remove('hidden');}
-        });
-        vid.addEventListener('ended',function(){vov.classList.remove('hidden');});
-      })();
-    </script>
 
     <div class="stats-row">
       <div class="stat-item">
